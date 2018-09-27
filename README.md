@@ -18,4 +18,4 @@ Augmented reality game from The Code Monkeys
 
 ## Project Information
 
-[Proposal document](proposal.md])
+[Proposal document](proposal.md)
