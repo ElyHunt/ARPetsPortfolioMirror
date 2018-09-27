@@ -12,14 +12,14 @@ Code Monkeys: Josh Bartling, Kip DeCastro, Elliot Hunt, Kyle Mitchell, Kurt Risl
 
 ### Minimum Viable Product statement
 
-An AR application that has a virtual pet that interacts with the environment and user by knowing the user's location, fetching a thrown virtual ball (or a beer from the AR fridge :beer:), avoiding obstacles,sleeping, eating, and moving through its environment.
+An AR application that has a virtual pet that interacts with the environment and user by knowing the user's location, fetching a thrown virtual ball (or a beer from the AR fridge :beer:), avoiding obstacles, playing, sleeping, eating, and moving through its environment.
 
 ### Base Features
 
-- Raise pet through life cycle (rewards and consequences :broken_heart:)
-- Feed and play with pet
-- Teach pet tricks over time
-- Toys/items for pet in environment persist
+- Raise pet through its life cycle (rewards :dog: and consequences :skull:)
+- Feed and play with pet, manage happiness/hunger/resources
+- Teach the pet tricks over time
+- Toys/items for pet persist in the environment
 
 ### Stretch Features/Ideas
 
@@ -46,9 +46,11 @@ An AR application that has a virtual pet that interacts with the environment and
 - Models
     - Multiple or parameterized models for a pet
     - Different pets (mouse, cat, dog, bird(?))
+    - Primarily polygons to start
 - Behaviors
     - Personalities
     - Moods
+    - Less in the face, more in the movement
 - Interface
     - Application logic
     - Widgets and chrome
