@@ -1,3 +1,19 @@
-Unity Scripting Flow Chart and event call reference:
-https://docs.unity3d.com/Manual/ExecutionOrder.html
+#Reference guides:
+
+#####Unity Scripting Flow Chart and event call reference:
+    https://docs.unity3d.com/Manual/ExecutionOrder.html
+~E.H.
+
+#Tutorials:
+
+#####Tutorials Page:
+    https://unity3d.com/learn/tutorials
+
+#####Roll A Ball Tutorial:
+    Probably the best simple general tutorial.
+    Goes over objects, camera movement,
+    keyboard input, events, etc.
+    Doesn't go over animations.
+    https://unity3d.com/learn/tutorials/s/roll-ball-tutorial
+
 ~E.H.
