@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1664
     height: 901
-  m_MinSize: {x: 681, y: 342}
-  m_MaxSize: {x: 12006, y: 8042}
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 91
+  controlID: 10
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -90,8 +90,8 @@ MonoBehaviour:
     y: 0
     width: 260
     height: 630
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -144,7 +144,7 @@ MonoBehaviour:
     y: 0
     width: 1664
     height: 951
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -207,10 +207,10 @@ MonoBehaviour:
     y: 0
     width: 1317
     height: 901
-  m_MinSize: {x: 404, y: 342}
-  m_MaxSize: {x: 8004, y: 8042}
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 92
+  controlID: 11
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,10 +231,10 @@ MonoBehaviour:
     y: 0
     width: 1317
     height: 630
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 93
+  controlID: 12
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -417,20 +417,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SteamVR/InteractionSystem/Samples/Prefabs
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SteamVR/InteractionSystem/Samples/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Josh\Documents\First Room
+  m_LastProjectPath: C:\Users\Josh\Documents\GitHub\sd-project-arpets\src\unity\First
+    Room
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 279}
-    m_SelectedIDs: 94180000
-    m_LastClickedID: 6292
-    m_ExpandedIDs: 00000000320b00003c11000098120000ca150000ce15000022190000281a0000981c0000
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 380b0000
+    m_LastClickedID: 2872
+    m_ExpandedIDs: 00000000380b0000421100009e120000d0150000d4150000281900002e1a00009e1c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -458,7 +459,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000320b00003c11000098120000ca150000ce15000022190000281a0000981c0000
+    m_ExpandedIDs: 00000000380b0000421100009e120000d0150000d4150000281900002e1a00009e1c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -483,8 +484,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ba1e0000
-    m_LastClickedInstanceID: 7866
+    m_SelectedInstanceIDs: 441e0000
+    m_LastClickedInstanceID: 7748
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000164f000062460000
     m_RenameOverlay:
@@ -573,10 +574,10 @@ MonoBehaviour:
     height: 609
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 304}
-    m_SelectedIDs: ccf7ffff
-    m_LastClickedID: -2100
-    m_ExpandedIDs: 26f4ffff28f4fffffcf8ffff4cf9ffffdaf9ffff28faffff2cfaffff2efaffff30faffffe4fbffff00000000341e0000
+    scrollPos: {x: 0, y: 48}
+    m_SelectedIDs: 441e0000
+    m_LastClickedID: 7748
+    m_ExpandedIDs: 0af9ffff72f9ffff20faffff26faffff28faffffdcfbffff00000000ca1e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -630,9 +631,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.9738559, y: 1.5180597, z: -0.27404672}
+    m_Target: {x: 1.0592842, y: 1.1552944, z: -1.8037727}
     speed: 2
-    m_Value: {x: 0.9738559, y: 1.5180597, z: -0.27404672}
+    m_Value: {x: 1.0592842, y: 1.1552944, z: -1.8037727}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -660,13 +661,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0748904, y: 0.92493194, z: -0.2539064, w: 0.27280748}
+    m_Target: {x: -0.09458825, y: 0.7584831, z: -0.11301722, w: -0.63481}
     speed: 2
-    m_Value: {x: 0.0748904, y: 0.92493194, z: -0.2539064, w: 0.27280748}
+    m_Value: {x: -0.094588235, y: 0.758483, z: -0.1130172, w: -0.6348099}
   m_Size:
-    m_Target: 0.5031012
+    m_Target: 0.20310122
     speed: 2
-    m_Value: 0.5031012
+    m_Value: 0.20310122
   m_Ortho:
     m_Target: 0
     speed: 2
