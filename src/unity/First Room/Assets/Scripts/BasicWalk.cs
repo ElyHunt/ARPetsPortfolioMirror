@@ -21,17 +21,18 @@ public class BasicWalk : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Vector3 velocity;
 		if(walkTime > 0f)
 		{
-			Debug.Log("Good");
+			//Debug.Log("Good");
 			//Debug.Log("Time1: " + walkTime.ToString());
 			walkTime -= Time.deltaTime;
-			Debug.Log("Time2: " + walkTime.ToString());
+			//Debug.Log("Time2: " + walkTime.ToString());
 			//rbody.velocity = moveDir * moveForce;
 		}
 		else
 		{
-			Debug.Log("Bad");
+			//Debug.Log("Bad");
 			//walkTime = 5.0f;
 			moveDir.Set(0,0,0);
 			if(idleTime > 0f)
@@ -46,6 +47,8 @@ public class BasicWalk : MonoBehaviour {
 				transform.rotation = Quaternion.LookRotation(moveDir);
 			}
 		}
+		velocity = moveDir * moveForce;
+		Debug.Log("Velocity x & z: " + velocity.x.ToString() + " " + velocity.z.ToString());
 		rbody.velocity = moveDir * moveForce;
 	}
 
