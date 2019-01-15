@@ -1,1 +1,4 @@
-# Nothing yet
+# Files to ignore for overall project 
+
+# VSCode settings files
+**/.vscode/**
