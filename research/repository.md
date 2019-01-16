@@ -1,6 +1,6 @@
 # Dealing with Git and the Repository
 
-These are just some short notes on Git and working with the repo. Right now it's just how to fetch and merge from, pull from, and push to both remotes for this repository, but tips and tricks for using Git, GitHub, and Azure may end up here as well.
+These are just some short notes on working with the repo. Tips and tricks for using Unity, Git, GitHub, Azure, and other software used in editing this project may end up here as well.
 
 ## Adding a remote
 
