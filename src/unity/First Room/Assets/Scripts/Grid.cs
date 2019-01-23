@@ -17,7 +17,7 @@ public class Grid : MonoBehaviour {
 	float nodeDiameter;
 	int gridSizeX, gridSizeY;
 
-	private void Start(){
+	private void Awake(){
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x/nodeDiameter);
 		gridSizeY = Mathf.RoundToInt(gridWorldSize.y/nodeDiameter);
@@ -86,6 +86,22 @@ public class Grid : MonoBehaviour {
 		//Debug.Log("Neighbor List" + JsonConvert.SerializeObject(NeighborList).ToString());
 
 		return NeighborList;
+	}
+
+	public int Count()
+	{
+		Debug.Log("In Count");
+		int temp = 0;
+		foreach(Node node in grid)
+		{
+			Debug.Log("In Loop");
+			if(FinalPath != null)
+			{
+				if(FinalPath.Contains(node))
+					temp++;
+			}
+		}
+		return temp;
 	}
 
 	private void OnDrawGizmos()

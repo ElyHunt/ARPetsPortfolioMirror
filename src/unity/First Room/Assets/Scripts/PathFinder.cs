@@ -7,7 +7,7 @@ using Valve.Newtonsoft.Json;
 public class PathFinder : MonoBehaviour 
 {
 
-	Grid grid;
+	public Grid grid;
 	public Transform StartPosition;
 	public Transform TargetPosition;
 
@@ -20,10 +20,10 @@ public class PathFinder : MonoBehaviour
 	{
 		FindPath(StartPosition.position, TargetPosition.position);
 	}
-	void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
+	public void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
 	{
-		Debug.Log("Start position" + a_StartPos.x + " " + a_StartPos.y + " " + a_StartPos.z);
-		Debug.Log("Target position" + a_TargetPos.x + " " + a_TargetPos.y + " " + a_TargetPos.z);
+		//Debug.Log("Start position" + a_StartPos.x + " " + a_StartPos.y + " " + a_StartPos.z);
+		//Debug.Log("Target position" + a_TargetPos.x + " " + a_TargetPos.y + " " + a_TargetPos.z);
 		Node StartNode = grid.NodeFromWorldPosition(a_StartPos);
 		Node TargetNode = grid.NodeFromWorldPosition(a_TargetPos);
 
@@ -91,8 +91,8 @@ public class PathFinder : MonoBehaviour
 
 	void GetFinalPath(Node a_StartNode, Node a_EndNode)
 	{
-		Debug.Log("Start Node:\n" + a_StartNode.Print());
-		Debug.Log("End Node:\n" + a_EndNode.Print());
+		//Debug.Log("Start Node:\n" + a_StartNode.Print());
+		//Debug.Log("End Node:\n" + a_EndNode.Print());
 		var FinalPathCoords = new List<Vector3>();
 		List<Node> FinalPath = new List<Node>();
 		Node CurrentNode = a_EndNode;
