@@ -8,6 +8,7 @@ public class BasicWalk : MonoBehaviour {
 	public float moveForce = 0f;
 	private Rigidbody rbody;
 	private PathFinder pathFinder;
+	private Grid grid;
 	public Vector3 moveDir;
 	public LayerMask whatIsHittable;
 	public float maxDistFromWall = 0f;
@@ -21,6 +22,7 @@ public class BasicWalk : MonoBehaviour {
 		manager = GameObject.Find("GameManager");
 		rbody = GetComponent<Rigidbody>();
 		pathFinder = manager.GetComponent<PathFinder>();
+		grid = manager.GetComponent<Grid>();
 		moveDir = ChooseDirection();
 	}
 	
@@ -29,11 +31,7 @@ public class BasicWalk : MonoBehaviour {
 	{
 		if(walkTime > 0f)
 		{
-			//Debug.Log("Good");
-			//Debug.Log("Time1: " + walkTime.ToString());
 			walkTime -= Time.deltaTime;
-			//Debug.Log("Time2: " + walkTime.ToString());
-			//rbody.velocity = moveDir * moveForce;
 		}
 		else
 		{
@@ -84,21 +82,16 @@ public class BasicWalk : MonoBehaviour {
 
 	void WalkTo()
 	{
-		Debug.Log("PRAY");
 		if(pathFinder != null)
 		{
 			pathFinder.FindPath(pathFinder.StartPosition.position, pathFinder.TargetPosition.position);
 		}
-		/*Grid grid = GetComponent<Grid>();
-		float step = moveForce * Time.deltaTime;
-		Debug.Log("Here");
-		Debug.Log(grid.Count());
+
 		for(int i = 0; i < grid.FinalPath.Count; i++)
 		{
-			Debug.Log("I'm Here!");
-			moveDir = Vector3.MoveTowards(transform.position, grid.FinalPath[i].Position, step);
+			moveDir.Set(grid.FinalPath[i].Position.x, 0, grid.FinalPath[i].Position.z);
 			transform.rotation = Quaternion.LookRotation(moveDir);
-			rbody.velocity = moveDir * moveForce;
-		}*/
+			rbody.MovePosition(moveDir);
+		}
 	}
 }
