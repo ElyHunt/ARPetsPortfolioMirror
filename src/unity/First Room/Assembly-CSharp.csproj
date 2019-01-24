@@ -56,6 +56,7 @@
      <Compile Include="Assets\Lowpoly Toon Cat Lite\Demo\Cat_Lite_Demo.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Scripts\aStar.cs" />
      <Compile Include="Assets\Scripts\BasicWalk.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\Scripts\DragMe.cs" />

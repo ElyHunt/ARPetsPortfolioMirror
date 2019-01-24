@@ -3,52 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicWalk : MonoBehaviour {
-
+	public bool isEnabled = true;
 	public float moveForce = 0f;
 	private Rigidbody rbody;
 	public Vector3 moveDir;
-	public LayerMask whatIsHittable;
-	public float maxDistFromWall = 0f;
 	public float idleTime = 3.0f;
 	public float walkTime = 4.0f;
 
 	// Use this for initialization
-	void Start () {
 
+	void Start () {
 		rbody = GetComponent<Rigidbody>();
 		moveDir = ChooseDirection();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		Vector3 velocity;
+	void Update () 
+	{
+		if(!isEnabled){
+			return;
+		}
 		if(walkTime > 0f)
 		{
-			//Debug.Log("Good");
-			//Debug.Log("Time1: " + walkTime.ToString());
 			walkTime -= Time.deltaTime;
-			//Debug.Log("Time2: " + walkTime.ToString());
-			//rbody.velocity = moveDir * moveForce;
 		}
 		else
 		{
-			//Debug.Log("Bad");
-			//walkTime = 5.0f;
+
 			moveDir.Set(0,0,0);
 			if(idleTime > 0f)
 			{
 				idleTime -= Time.deltaTime;
-				//rbody.velocity = moveDir * moveForce;
 			}
 			else{
 				walkTime = 4.0f;
 				idleTime = 3.0f;
-				moveDir = ChooseDirection();
-				transform.rotation = Quaternion.LookRotation(moveDir);
+				isEnabled = false;
+				moveDir.Set(0,0,0);
 			}
 		}
-		velocity = moveDir * moveForce;
-		Debug.Log("Velocity x & z: " + velocity.x.ToString() + " " + velocity.z.ToString());
 		rbody.velocity = moveDir * moveForce;
 	}
 
@@ -57,7 +50,7 @@ public class BasicWalk : MonoBehaviour {
 		Vector3 temp = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
 		Vector3 check = new Vector3(0,0,0);
 		if(temp == check){
-			Debug.Log("Hit 0,0,0");
+			//Debug.Log("Hit 0,0,0");
 			temp.Set(0,0,1);
 		}
 		if(moveDir.x >= (temp.x-5) && moveDir.x <= (temp.x+5)){
@@ -77,4 +70,37 @@ public class BasicWalk : MonoBehaviour {
 		moveDir = ChooseDirection();
 		transform.rotation = Quaternion.LookRotation(moveDir);
 	}
+
+	void WalkTo()
+	{
+		if(pathFinder != null)
+		{
+			pathFinder.FindPath(pathFinder.StartPosition.position, pathFinder.TargetPosition.position);
+		}
+
+		for(int i = 0; i < grid.FinalPath.Count; i++)
+		{
+			//moveDir.Set(Vector3.RotateTowards(grid.FinalPath[i].Position.x, 0, grid.FinalPath[i].Position.z));
+			transform.rotation = Quaternion.LookRotation(moveDir);
+			//transform.position = Vector3.Lerp(transform.position, moveDir, moveForce * Time.deltaTime);
+			rbody.velocity = moveDir * moveForce;
+		}
+		
+		//StartCoroutine(AsyncWalk());
+	}
+	/*IEnumerator AsyncWalk(){
+		if(pathFinder != null)
+		{
+			pathFinder.FindPath(pathFinder.StartPosition.position, pathFinder.TargetPosition.position);
+		}
+		int i = 0;
+		if( i < grid.FinalPath.Count)
+		{
+			moveDir.Set(grid.FinalPath[i].Position.x, 0, grid.FinalPath[i].Position.z);
+			transform.rotation = Quaternion.LookRotation(moveDir);
+			transform.position = Vector3.Lerp(transform.position, moveDir, moveForce);
+			yield return new WaitForSeconds(5.0f);
+			i++;
+		}
+	}*/
 }
