@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class BasicWalk : MonoBehaviour {
 
-	private GameObject manager;
 	public float moveForce = 0f;
 	private Rigidbody rbody;
-	private PathFinder pathFinder;
 	public Vector3 moveDir;
 	public LayerMask whatIsHittable;
 	public float maxDistFromWall = 0f;
@@ -15,18 +13,15 @@ public class BasicWalk : MonoBehaviour {
 	public float walkTime = 4.0f;
 
 	// Use this for initialization
-
 	void Start () {
-		Debug.Log("IM IN START");
-		manager = GameObject.Find("GameManager");
+
 		rbody = GetComponent<Rigidbody>();
-		pathFinder = manager.GetComponent<PathFinder>();
 		moveDir = ChooseDirection();
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
+	void Update () {
+		Vector3 velocity;
 		if(walkTime > 0f)
 		{
 			//Debug.Log("Good");
@@ -48,11 +43,12 @@ public class BasicWalk : MonoBehaviour {
 			else{
 				walkTime = 4.0f;
 				idleTime = 3.0f;
-				WalkTo();
 				moveDir = ChooseDirection();
 				transform.rotation = Quaternion.LookRotation(moveDir);
 			}
 		}
+		velocity = moveDir * moveForce;
+		Debug.Log("Velocity x & z: " + velocity.x.ToString() + " " + velocity.z.ToString());
 		rbody.velocity = moveDir * moveForce;
 	}
 
@@ -61,7 +57,7 @@ public class BasicWalk : MonoBehaviour {
 		Vector3 temp = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
 		Vector3 check = new Vector3(0,0,0);
 		if(temp == check){
-			//Debug.Log("Hit 0,0,0");
+			Debug.Log("Hit 0,0,0");
 			temp.Set(0,0,1);
 		}
 		if(moveDir.x >= (temp.x-5) && moveDir.x <= (temp.x+5)){
@@ -80,25 +76,5 @@ public class BasicWalk : MonoBehaviour {
 		walkTime = 4.0f;
 		moveDir = ChooseDirection();
 		transform.rotation = Quaternion.LookRotation(moveDir);
-	}
-
-	void WalkTo()
-	{
-		Debug.Log("PRAY");
-		if(pathFinder != null)
-		{
-			pathFinder.FindPath(pathFinder.StartPosition.position, pathFinder.TargetPosition.position);
-		}
-		/*Grid grid = GetComponent<Grid>();
-		float step = moveForce * Time.deltaTime;
-		Debug.Log("Here");
-		Debug.Log(grid.Count());
-		for(int i = 0; i < grid.FinalPath.Count; i++)
-		{
-			Debug.Log("I'm Here!");
-			moveDir = Vector3.MoveTowards(transform.position, grid.FinalPath[i].Position, step);
-			transform.rotation = Quaternion.LookRotation(moveDir);
-			rbody.velocity = moveDir * moveForce;
-		}*/
 	}
 }
