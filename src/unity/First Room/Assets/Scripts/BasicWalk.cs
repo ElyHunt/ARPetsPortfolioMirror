@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicWalk : MonoBehaviour {
 
 	public float moveForce = 0f;
-	private Rigidbody rbody;
+	public Rigidbody rbody;
 	public Vector3 moveDir;
 	public LayerMask whatIsHittable;
 	public float maxDistFromWall = 0f;
@@ -44,6 +44,7 @@ public class BasicWalk : MonoBehaviour {
 				moveDir.Set(0f, 0f, 0f);
 				//This is for the test, remove later.
 				isEnabled = false;
+				return;
 			}
 		}
 		rbody.velocity = moveDir * moveForce;
