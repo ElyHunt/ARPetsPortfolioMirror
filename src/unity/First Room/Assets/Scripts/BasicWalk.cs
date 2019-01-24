@@ -91,7 +91,24 @@ public class BasicWalk : MonoBehaviour {
 		{
 			moveDir.Set(grid.FinalPath[i].Position.x, 0, grid.FinalPath[i].Position.z);
 			transform.rotation = Quaternion.LookRotation(moveDir);
-			rbody.MovePosition(moveDir);
+			transform.position = Vector3.Lerp(transform.position, moveDir, moveForce * Time.deltaTime);
 		}
+		
+		//StartCoroutine(AsyncWalk());
 	}
+	/*IEnumerator AsyncWalk(){
+		if(pathFinder != null)
+		{
+			pathFinder.FindPath(pathFinder.StartPosition.position, pathFinder.TargetPosition.position);
+		}
+		int i = 0;
+		if( i < grid.FinalPath.Count)
+		{
+			moveDir.Set(grid.FinalPath[i].Position.x, 0, grid.FinalPath[i].Position.z);
+			transform.rotation = Quaternion.LookRotation(moveDir);
+			transform.position = Vector3.Lerp(transform.position, moveDir, moveForce);
+			yield return new WaitForSeconds(5.0f);
+			i++;
+		}
+	}*/
 }
