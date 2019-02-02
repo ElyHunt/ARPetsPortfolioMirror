@@ -17,8 +17,8 @@ public class aStar : MonoBehaviour
         pathFinder = manager.GetComponent<PathFinder>();
 		grid = manager.GetComponent<Grid>();
         walk = GetComponent<BasicWalk>();
-        bed = GameObject.Find("RFAIPP_Bed_2");
-        destination = bed.transform;
+        //bed = GameObject.Find("EndCube");
+        //destination = bed.transform;
     }
 
     // Update is called once per frame
@@ -30,25 +30,18 @@ public class aStar : MonoBehaviour
         }
         Node current = grid.NodeFromWorldPosition(transform.position);
         Node dest = grid.NodeFromWorldPosition(destination.position);
+        pathFinder.FindPath(transform.position, dest.Position);
         if(current.gridX == dest.gridX && current.gridY == dest.gridY)
         {
             walk.isEnabled = true;
             return;
         }
-        Node next = null;
-        for(int i = 0; i < grid.FinalPath.Count; i++)
-        {
-            if(current.gridX == grid.FinalPath[i].gridX && current.gridY == grid.FinalPath[i].gridY)
-            {
-                next = grid.FinalPath[i+1];
-            }
+        Node next = grid.FinalPath[0];
+        if(current == grid.FinalPath[0]){
+            next = grid.FinalPath[1];
         }
-        if(next == null)
-        {
-            next = grid.FinalPath[0];
-        }
-        walk.moveDir = Vector3.RotateTowards(transform.position,next.Position, walk.moveForce * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(walk.moveDir);
-        walk.rbody.velocity = walk.moveDir * walk.moveForce;
+        float step = (Time.deltaTime * walk.moveForce) * 3;
+        transform.LookAt(next.Position);
+        transform.position = Vector3.MoveTowards(transform.position, next.Position, step);
     }
 }
