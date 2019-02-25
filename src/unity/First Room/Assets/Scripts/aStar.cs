@@ -5,9 +5,11 @@ using UnityEngine;
 public class aStar : MonoBehaviour
 {
     private GameObject manager;
+    private GameObject bed;
     private PathFinder pathFinder;
 	private Grid grid;
     private BasicWalk walk;
+    public Transform destination;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +17,31 @@ public class aStar : MonoBehaviour
         pathFinder = manager.GetComponent<PathFinder>();
 		grid = manager.GetComponent<Grid>();
         walk = GetComponent<BasicWalk>();
+        //bed = GameObject.Find("EndCube");
+        //destination = bed.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(walk.isEnabled)
+        {
+            return;
+        }
+        Node current = grid.NodeFromWorldPosition(transform.position);
+        Node dest = grid.NodeFromWorldPosition(destination.position);
+        pathFinder.FindPath(transform.position, dest.Position);
+        if(current.gridX == dest.gridX && current.gridY == dest.gridY)
+        {
+            walk.isEnabled = true;
+            return;
+        }
+        Node next = grid.FinalPath[0];
+        if(current == grid.FinalPath[0]){
+            next = grid.FinalPath[1];
+        }
+        float step = (Time.deltaTime * walk.moveForce) * 3;
+        transform.LookAt(next.Position);
+        transform.position = Vector3.MoveTowards(transform.position, next.Position, step);
     }
 }

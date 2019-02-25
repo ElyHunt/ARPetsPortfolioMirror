@@ -18,7 +18,7 @@ public class PathFinder : MonoBehaviour
 
 	private void Update()
 	{
-		FindPath(StartPosition.position, TargetPosition.position);
+		//FindPath(StartPosition.position, TargetPosition.position);
 	}
 	public void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
 	{

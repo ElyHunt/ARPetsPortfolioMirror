@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicWalk : MonoBehaviour {
 
 	public float moveForce = 0f;
-	private Rigidbody rbody;
+	public Rigidbody rbody;
 	public Vector3 moveDir;
 	public LayerMask whatIsHittable;
 	public float maxDistFromWall = 0f;
@@ -25,8 +25,10 @@ public class BasicWalk : MonoBehaviour {
 	{
 		if(!isEnabled)
 		{
+			moveDir = ChooseDirection();
 			return;
 		}
+		transform.rotation = Quaternion.LookRotation(moveDir);
 		if(walkTime > 0f)
 		{
 			walkTime -= Time.deltaTime;
@@ -41,9 +43,9 @@ public class BasicWalk : MonoBehaviour {
 			else{
 				walkTime = 4.0f;
 				idleTime = 3.0f;
-				moveDir.Set(0f, 0f, 0f);
-				//This is for the test, remove later.
 				isEnabled = false;
+				moveDir = ChooseDirection();
+				return;
 			}
 		}
 		rbody.velocity = moveDir * moveForce;
