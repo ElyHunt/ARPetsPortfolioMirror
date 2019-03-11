@@ -150,6 +150,7 @@ ModelImporter:
     7400014: Idle_B
     7400016: Run
     7400018: Walk
+    7400020: Idle_BDuplicate
     9500000: //RootNode
     13700000: Cat_Lite
   externalObjects: {}
