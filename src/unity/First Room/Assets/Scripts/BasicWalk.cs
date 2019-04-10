@@ -43,11 +43,13 @@ public class BasicWalk : MonoBehaviour {
 			else{
 				walkTime = 4.0f;
 				idleTime = 3.0f;
-				isEnabled = false;
+				//This started the feed method during testing, not used now
+				//isEnabled = false;
 				moveDir = ChooseDirection();
 				return;
 			}
 		}
+		Debug.Log(moveForce + " and vector: " + moveDir.x + " " + moveDir.y + " " + moveDir.z);
 		rbody.velocity = moveDir * moveForce;
 	}
 
