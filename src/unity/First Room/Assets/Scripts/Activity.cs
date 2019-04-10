@@ -37,15 +37,17 @@ public class Activity : MonoBehaviour
         {
             yield return null;
         }
-        GameObject temp = GameObject.Find("Player");
-        location.SetActive(false);
+        GameObject temp = GameObject.Find("Room/Player/SteamVRObjects/VRCamera");
+        //Just trying to get rid of obj to random place...
+        location.transform.position = new Vector3(35,35,35);
         goal.destination = temp.transform;
         trigger.isEnabled = false;
         while(!trigger.isEnabled){
             yield return null;
         }
+        //And return it
+        //location.SetActive(true);
         Vector3 local = new Vector3(0.114f, -.26653f, -8.496f);
         location.transform.position = local;
-        location.SetActive(true);
     }
 }
