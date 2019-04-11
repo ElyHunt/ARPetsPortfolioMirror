@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Lowpoly Toon Cat Lite copy\Demo\Cat_Lite_Demo.cs" />
     <Compile Include="Assets\Lowpoly Toon Cat Lite\Demo\Cat_Lite_Demo.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\Activity.cs" />
@@ -259,6 +258,8 @@
     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
+    <None Include="Assets\TSF\Shaders\TSFOutline.shader" />
+    <None Include="Assets\TSF\Shaders\TSF.shader" />
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\HighlighGlobal.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
