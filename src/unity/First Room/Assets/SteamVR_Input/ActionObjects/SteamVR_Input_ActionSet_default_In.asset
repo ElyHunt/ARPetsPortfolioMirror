@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -22,6 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac3de5add4b996543bbf46e680b0dec2, type: 2}
   - {fileID: 11400000, guid: ce229277844feff488e1a6d3fd609aae, type: 2}
   - {fileID: 11400000, guid: 495cd59179269994385b91b699a3c12f, type: 2}
+  - {fileID: 11400000, guid: cf772de47daeff04e87021a895ddd777, type: 2}
+  - {fileID: 11400000, guid: c5e13075f817c9d47a316e14e17b659e, type: 2}
   InteractUI: {fileID: 11400000, guid: 1a04afa4e92699a48a9e7c6a079d5e3e, type: 2}
   Teleport: {fileID: 11400000, guid: 3df383de109cbca4fb688662778fa647, type: 2}
   GrabPinch: {fileID: 11400000, guid: b5e9f3545f50412428c4fd86b4f4cb04, type: 2}
@@ -30,3 +33,5 @@ MonoBehaviour:
   SkeletonLeftHand: {fileID: 11400000, guid: ac3de5add4b996543bbf46e680b0dec2, type: 2}
   SkeletonRightHand: {fileID: 11400000, guid: ce229277844feff488e1a6d3fd609aae, type: 2}
   Squeeze: {fileID: 11400000, guid: 495cd59179269994385b91b699a3c12f, type: 2}
+  SelectMenu: {fileID: 11400000, guid: cf772de47daeff04e87021a895ddd777, type: 2}
+  OpenMenu: {fileID: 11400000, guid: c5e13075f817c9d47a316e14e17b659e, type: 2}
