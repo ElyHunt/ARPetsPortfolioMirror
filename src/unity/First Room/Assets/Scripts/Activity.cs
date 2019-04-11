@@ -39,7 +39,7 @@ public class Activity : MonoBehaviour
         }
         GameObject temp = GameObject.Find("Room/Player/SteamVRObjects/VRCamera");
         //Just trying to get rid of obj to random place...
-        location.transform.position = new Vector3(35,35,35);
+        location.transform.position = new Vector3(35f,35f,35f);
         goal.destination = temp.transform;
         trigger.isEnabled = false;
         while(!trigger.isEnabled){
@@ -47,7 +47,9 @@ public class Activity : MonoBehaviour
         }
         //And return it
         //location.SetActive(true);
-        Vector3 local = new Vector3(0.114f, -.26653f, -8.496f);
-        location.transform.position = local;
+        //location.transform.
+        location.transform.localRotation = new Quaternion(0,0,0,0);
+        location.transform.localPosition = new Vector3(0.114f, -.16653f, -8.496f);
+        //location.transform.localPosition = new Vector3(0f, 1f, 0f);//
     }
 }
