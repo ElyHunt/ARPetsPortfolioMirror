@@ -1,7 +1,6 @@
-Adding some junk
-# AR Pets
+# VR Pets
 
-Augmented reality game from The Code Monkeys
+Virtual reality game from The Code Monkeys
 
 ## Group Information
 
