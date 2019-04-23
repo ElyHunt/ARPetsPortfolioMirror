@@ -10,6 +10,7 @@ public class aStar : MonoBehaviour
 	private Grid grid;
     private BasicWalk walk;
     public Transform destination;
+    private Animation anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +18,8 @@ public class aStar : MonoBehaviour
         pathFinder = manager.GetComponent<PathFinder>();
 		grid = manager.GetComponent<Grid>();
         walk = GetComponent<BasicWalk>();
-        //bed = GameObject.Find("EndCube");
-        //destination = bed.transform;
+        anim = GetComponent<Animation>();
+        anim.wrapMode = WrapMode.Loop;
     }
 
     // Update is called once per frame
@@ -45,6 +46,9 @@ public class aStar : MonoBehaviour
         }
         float step = (Time.deltaTime * walk.moveForce) * 3;
         transform.LookAt(next.Position);
+        if(anim != null){
+			anim.Play("WalkDuplicate");
+		}
         transform.position = Vector3.MoveTowards(transform.position, next.Position, step);
     }
 }

@@ -12,12 +12,14 @@ public class BasicWalk : MonoBehaviour {
 	public float idleTime = 3.0f;
 	public float walkTime = 4.0f;
 	public bool isEnabled = true;
+	public Animator anim;
 
 	// Use this for initialization
 
 	void Start () {
 		rbody = GetComponent<Rigidbody>();
 		moveDir = ChooseDirection();
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -49,7 +51,13 @@ public class BasicWalk : MonoBehaviour {
 				return;
 			}
 		}
-		Debug.Log(moveForce + " and vector: " + moveDir.x + " " + moveDir.y + " " + moveDir.z);
+		//Debug.Log(moveForce + " and vector: " + moveDir.x + " " + moveDir.y + " " + moveDir.z);
+		if(anim != null){
+			anim.SetFloat("speed", (moveDir.x + moveDir.z) * moveForce);
+			if(moveDir.x + moveDir.z == 0){
+				anim.SetBool("luck", false);
+			}
+		}
 		rbody.velocity = moveDir * moveForce;
 	}
 
