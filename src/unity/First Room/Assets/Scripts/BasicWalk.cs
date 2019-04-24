@@ -21,13 +21,12 @@ public class BasicWalk : MonoBehaviour {
 		moveDir = ChooseDirection();
 		anim = GetComponent<Animator>();
 		if(anim != null){
-					if((moveDir.x > 5 && moveDir.x <= 5) || (moveDir.z > 5 && moveDir.z <= 5)){
+					if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
 						anim.SetFloat("speed", 31);
 					}
 					else{
 						anim.SetFloat("speed", 2);
 					}
-					Debug.Log("Load Speed: " + anim.GetParameter(0));
 				}
 	}
 	
@@ -47,12 +46,18 @@ public class BasicWalk : MonoBehaviour {
 		else
 		{
 			moveDir.Set(0f,0f,0f);
+			/* New Problem: Pet always faces forward... don't know how we didn't notice it until
+			a week before the presentation, but... whatever */
+			rbody.angularVelocity = Vector3.zero;
 			if(idleTime > 0f)
 			{
 				if(anim != null){
+					bool pick = (Random.value > 0.5f);
 					anim.SetFloat("speed", 0f);
-					anim.SetBool("luck", false);
-					Debug.Log("Speed: " + anim.GetFloat("speed"));
+					if(pick)
+						anim.SetBool("IdleA", true);
+					else
+						anim.SetBool("IdleB", true);
 				}
 				idleTime -= Time.deltaTime;
 			}
@@ -63,13 +68,14 @@ public class BasicWalk : MonoBehaviour {
 				//isEnabled = false;
 				moveDir = ChooseDirection();
 				if(anim != null){
-					if((moveDir.x > 5 && moveDir.x <= 5) || (moveDir.z > 5 && moveDir.z <= 5)){
+					if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
 						anim.SetFloat("speed", 31);
 					}
 					else{
 						anim.SetFloat("speed", 2);
 					}
-					Debug.Log("Speed: " + anim.GetFloat("speed"));
+					anim.SetBool("IdleA",false);
+					anim.SetBool("IdleB",false);
 				}
 				return;
 			}
@@ -108,14 +114,13 @@ public class BasicWalk : MonoBehaviour {
 		moveDir = ChooseDirection();
 		transform.rotation = Quaternion.LookRotation(moveDir);
 		if(anim != null){
-					if((moveDir.x > 5 && moveDir.x <= 5) || (moveDir.z > 5 && moveDir.z <= 5)){
-						anim.SetFloat("speed", 31);
-					}
-					else{
-						anim.SetFloat("speed", 2);
-					}
-					Debug.Log("Speed: " + anim.GetFloat("speed"));
-				}
+			if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
+				anim.SetFloat("speed", 31);
+			}
+			else{
+				anim.SetFloat("speed", 2);
+			}
+		}
 	}
 
 	/*void WalkTo()
