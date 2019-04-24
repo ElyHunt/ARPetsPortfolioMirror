@@ -20,6 +20,15 @@ public class BasicWalk : MonoBehaviour {
 		rbody = GetComponent<Rigidbody>();
 		moveDir = ChooseDirection();
 		anim = GetComponent<Animator>();
+		if(anim != null){
+					if((moveDir.x > 5 && moveDir.x <= 5) || (moveDir.z > 5 && moveDir.z <= 5)){
+						anim.SetFloat("speed", 31);
+					}
+					else{
+						anim.SetFloat("speed", 2);
+					}
+					Debug.Log("Load Speed: " + anim.GetParameter(0));
+				}
 	}
 	
 	// Update is called once per frame
@@ -37,9 +46,14 @@ public class BasicWalk : MonoBehaviour {
 		}
 		else
 		{
-			moveDir.Set(0,0,0);
+			moveDir.Set(0f,0f,0f);
 			if(idleTime > 0f)
 			{
+				if(anim != null){
+					anim.SetFloat("speed", 0f);
+					anim.SetBool("luck", false);
+					Debug.Log("Speed: " + anim.GetFloat("speed"));
+				}
 				idleTime -= Time.deltaTime;
 			}
 			else{
@@ -48,16 +62,27 @@ public class BasicWalk : MonoBehaviour {
 				//This started the feed method during testing, not used now
 				//isEnabled = false;
 				moveDir = ChooseDirection();
+				if(anim != null){
+					if((moveDir.x > 5 && moveDir.x <= 5) || (moveDir.z > 5 && moveDir.z <= 5)){
+						anim.SetFloat("speed", 31);
+					}
+					else{
+						anim.SetFloat("speed", 2);
+					}
+					Debug.Log("Speed: " + anim.GetFloat("speed"));
+				}
 				return;
 			}
 		}
 		//Debug.Log(moveForce + " and vector: " + moveDir.x + " " + moveDir.y + " " + moveDir.z);
-		if(anim != null){
+		/*if(anim != null){
 			anim.SetFloat("speed", (moveDir.x + moveDir.z) * moveForce);
+			Debug.Log("Speed: " + (moveDir.x + moveDir.z) * moveForce);
 			if(moveDir.x + moveDir.z == 0){
+				anim.SetFloat("speed", 0);
 				anim.SetBool("luck", false);
 			}
-		}
+		}*/
 		rbody.velocity = moveDir * moveForce;
 	}
 
@@ -82,6 +107,15 @@ public class BasicWalk : MonoBehaviour {
 		walkTime = 4.0f;
 		moveDir = ChooseDirection();
 		transform.rotation = Quaternion.LookRotation(moveDir);
+		if(anim != null){
+					if((moveDir.x > 5 && moveDir.x <= 5) || (moveDir.z > 5 && moveDir.z <= 5)){
+						anim.SetFloat("speed", 31);
+					}
+					else{
+						anim.SetFloat("speed", 2);
+					}
+					Debug.Log("Speed: " + anim.GetFloat("speed"));
+				}
 	}
 
 	/*void WalkTo()
