@@ -5,7 +5,7 @@
 [Bb]uilds/
 [Ll]ogs/
 src/unity/First\ Room/Assembly-CSharp-Editor.csproj
-src/unity/First\ Room/ Assembly-CSharp.csproj
+src/unity/First\ Room/Assembly-CSharp.csproj
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
 *.meta
