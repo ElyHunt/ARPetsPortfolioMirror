@@ -5,10 +5,12 @@
 [Bb]uilds/
 [Ll]ogs/
 src/unity/First\ Room/Assembly-CSharp-Editor.csproj
-src/unity/First\ Room/ Assembly-CSharp.csproj
+src/unity/First\ Room/Assembly-CSharp.csproj
+src/unity/First\ Room/Library/
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
 *.meta
+*.DS_Store
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*

@@ -12,12 +12,23 @@ public class BasicWalk : MonoBehaviour {
 	public float idleTime = 3.0f;
 	public float walkTime = 4.0f;
 	public bool isEnabled = true;
+	public Animator anim;
+	private bool isStill = false;
 
 	// Use this for initialization
 
 	void Start () {
 		rbody = GetComponent<Rigidbody>();
 		moveDir = ChooseDirection();
+		anim = GetComponent<Animator>();
+		if(anim != null){
+			if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
+				anim.SetFloat("speed", 31);
+			}
+			else{
+				anim.SetFloat("speed", 2);
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -28,28 +39,63 @@ public class BasicWalk : MonoBehaviour {
 			moveDir = ChooseDirection();
 			return;
 		}
-		transform.rotation = Quaternion.LookRotation(moveDir);
+		if(!isStill){
+			transform.rotation = Quaternion.LookRotation(moveDir);
+		}
 		if(walkTime > 0f)
 		{
 			walkTime -= Time.deltaTime;
 		}
 		else
 		{
-			moveDir.Set(0,0,0);
+			rbody.freezeRotation = true;
+			isStill = true;
+			moveDir.Set(0f,0f,0f);
+			/* New Problem: Pet always faces forward... don't know how we didn't notice it until
+			a week before the presentation, but... whatever */
+			rbody.angularVelocity = Vector3.zero;
 			if(idleTime > 0f)
 			{
+				if(anim != null){
+					bool pick = (Random.value > 0.5f);
+					anim.SetFloat("speed", 0f);
+					if(pick)
+						anim.SetBool("IdleA", true);
+					else
+						anim.SetBool("IdleB", true);
+				}
 				idleTime -= Time.deltaTime;
 			}
 			else{
 				walkTime = 4.0f;
 				idleTime = 3.0f;
+				isStill = false;
+				rbody.freezeRotation = false;
 				//This started the feed method during testing, not used now
 				//isEnabled = false;
 				moveDir = ChooseDirection();
+				if(anim != null){
+					if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
+						anim.SetFloat("speed", 31);
+					}
+					else{
+						anim.SetFloat("speed", 2);
+					}
+					anim.SetBool("IdleA",false);
+					anim.SetBool("IdleB",false);
+				}
 				return;
 			}
 		}
-		Debug.Log(moveForce + " and vector: " + moveDir.x + " " + moveDir.y + " " + moveDir.z);
+		//Debug.Log(moveForce + " and vector: " + moveDir.x + " " + moveDir.y + " " + moveDir.z);
+		/*if(anim != null){
+			anim.SetFloat("speed", (moveDir.x + moveDir.z) * moveForce);
+			Debug.Log("Speed: " + (moveDir.x + moveDir.z) * moveForce);
+			if(moveDir.x + moveDir.z == 0){
+				anim.SetFloat("speed", 0);
+				anim.SetBool("luck", false);
+			}
+		}*/
 		rbody.velocity = moveDir * moveForce;
 	}
 
@@ -74,6 +120,14 @@ public class BasicWalk : MonoBehaviour {
 		walkTime = 4.0f;
 		moveDir = ChooseDirection();
 		transform.rotation = Quaternion.LookRotation(moveDir);
+		if(anim != null){
+			if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
+				anim.SetFloat("speed", 31);
+			}
+			else{
+				anim.SetFloat("speed", 2);
+			}
+		}
 	}
 
 	/*void WalkTo()
