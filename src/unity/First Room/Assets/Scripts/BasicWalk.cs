@@ -13,6 +13,7 @@ public class BasicWalk : MonoBehaviour {
 	public float walkTime = 4.0f;
 	public bool isEnabled = true;
 	public Animator anim;
+	private bool isStill = false;
 
 	// Use this for initialization
 
@@ -21,13 +22,13 @@ public class BasicWalk : MonoBehaviour {
 		moveDir = ChooseDirection();
 		anim = GetComponent<Animator>();
 		if(anim != null){
-					if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
-						anim.SetFloat("speed", 31);
-					}
-					else{
-						anim.SetFloat("speed", 2);
-					}
-				}
+			if(Mathf.Abs(moveDir.x) + Mathf.Abs(moveDir.z) > 10f){
+				anim.SetFloat("speed", 31);
+			}
+			else{
+				anim.SetFloat("speed", 2);
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -38,13 +39,16 @@ public class BasicWalk : MonoBehaviour {
 			moveDir = ChooseDirection();
 			return;
 		}
-		transform.rotation = Quaternion.LookRotation(moveDir);
+		if(!isStill){
+			transform.rotation = Quaternion.LookRotation(moveDir);
+		}
 		if(walkTime > 0f)
 		{
 			walkTime -= Time.deltaTime;
 		}
 		else
 		{
+			isStill = true;
 			moveDir.Set(0f,0f,0f);
 			/* New Problem: Pet always faces forward... don't know how we didn't notice it until
 			a week before the presentation, but... whatever */
@@ -64,6 +68,7 @@ public class BasicWalk : MonoBehaviour {
 			else{
 				walkTime = 4.0f;
 				idleTime = 3.0f;
+				isStill = false;
 				//This started the feed method during testing, not used now
 				//isEnabled = false;
 				moveDir = ChooseDirection();
