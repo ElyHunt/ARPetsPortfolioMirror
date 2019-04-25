@@ -89,6 +89,7 @@ So.... Project Story, Work, Problems format for everyone.
 ## We wanted this... Tech Change (AR-VR)
 ## GitHub Repo BOMBS, 
 ## Azure, 
+## Daheck is up with these commit messages?
 # Elliot Hunt
 ## Outro
 ## Future of reality/Life
