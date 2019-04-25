@@ -48,6 +48,7 @@ public class BasicWalk : MonoBehaviour {
 		}
 		else
 		{
+			rbody.freezeRotation = true;
 			isStill = true;
 			moveDir.Set(0f,0f,0f);
 			/* New Problem: Pet always faces forward... don't know how we didn't notice it until
@@ -69,6 +70,7 @@ public class BasicWalk : MonoBehaviour {
 				walkTime = 4.0f;
 				idleTime = 3.0f;
 				isStill = false;
+				rbody.freezeRotation = false;
 				//This started the feed method during testing, not used now
 				//isEnabled = false;
 				moveDir = ChooseDirection();
