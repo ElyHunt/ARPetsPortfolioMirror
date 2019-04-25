@@ -2,7 +2,8 @@
   "actions": [
     {
       "name": "/actions/default/in/InteractUI",
-      "type": "boolean"
+      "type": "boolean",
+      "requirement": "mandatory"
     },
     {
       "name": "/actions/default/in/Teleport",
@@ -34,6 +35,14 @@
       "name": "/actions/default/in/Squeeze",
       "type": "vector1",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/default/in/SelectMenu",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/OpenMenu",
+      "type": "boolean"
     },
     {
       "name": "/actions/default/out/Haptic",

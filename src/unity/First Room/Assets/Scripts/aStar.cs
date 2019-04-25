@@ -31,7 +31,10 @@ public class aStar : MonoBehaviour
         Node current = grid.NodeFromWorldPosition(transform.position);
         Node dest = grid.NodeFromWorldPosition(destination.position);
         pathFinder.FindPath(transform.position, dest.Position);
+        Debug.Log("Cat Loc: " + current.gridX + " " + current.gridY);
+        Debug.Log("Dest Loc: " + dest.gridX + " " + dest.gridY);
         if(current.gridX == dest.gridX && current.gridY == dest.gridY)
+        //if(((current.gridX >= dest.gridX-2) || (current.gridX <= dest.gridX+2)) && current.gridY == dest.gridY)
         {
             walk.isEnabled = true;
             return;
