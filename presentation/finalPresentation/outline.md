@@ -11,6 +11,8 @@ Josh Bartling, Elliot Hunt, Kyle Mitchell, and Kurt Risley, with Kip DeCastro
 ## The problem and the idea
 
 Problem *for* the project: Choose an interesting project for Senior Design
+### Josh and I met our first year in CoSci. We were in 1030 and we agreed we just wanted to make a game.
+### 
 
 Problem *of* the project: Living alone in an apartment that doesn't allow pets can get very lonely
 
@@ -36,6 +38,8 @@ Any currently available solutions are limited, are prototypes, or need to be bui
 
 Partial solutions (3D camera that can feed into an HMD) are expensive and difficult to obtain
 
+Our project was plagued with problems. Compiler errors, fighting Unity, Fighting GitHub, and... our project got HAUNTED. Our fox even got possessed???
+
 ## Right turn: how do we adapt
 
 Can we "settle" for a VR version? Less novel, but well-supported, and still a challenge
@@ -59,3 +63,32 @@ VR is still young, and needs our help! Still plenty of opportunity for good and 
 ## Where we're going
 
 [Mention plans for next steps and later goals]
+
+
+
+So.... Project Story, Work, Problems format for everyone.
+
+# Josh Bartling
+## Intro/Two Friends, etc. etc. Losing Kip
+## Room Building, Sample Scene
+## Behavior, PathFinding
+## Project ROOM HAUNTED?,
+# Elliot Hunt
+## Met Josh in 1030
+## Model/Animations, etc.
+## Fox POSSESSED?
+## Purple Fox
+## etc.
+# Kurt Risley
+## Met Josh in 2030
+## Interfaces, 
+## Working with Unity/Issues
+## Merging BRANCHES.
+# Kyle Mitchell
+## Met Josh in 4740 (Operating Systems)
+## We wanted this... Tech Change (AR-VR)
+## GitHub Repo BOMBS, 
+## Azure, 
+# Elliot Hunt
+## Outro
+## Future of reality/Life
