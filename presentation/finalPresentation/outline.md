@@ -93,3 +93,6 @@ So.... Project Story, Work, Problems format for everyone.
 # Elliot Hunt
 ## Outro
 ## Future of reality/Life
+
+
+https://drive.google.com/open?id=10ycTSU0j03iq6ZyPuoFw_zzCkJgpISr8
