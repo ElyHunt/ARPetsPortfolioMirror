@@ -73,26 +73,55 @@ So.... Project Story, Work, Problems format for everyone.
 ## Room Building, Sample Scene
 ## Behavior, PathFinding
 ## Project ROOM HAUNTED?,
+
 # Elliot Hunt
 ## Met Josh in 1030
 ## Model/Animations, etc.
 ## Fox POSSESSED?
 ## Purple Fox
 ## etc.
+
 # Kurt Risley
 ## Met Josh in 2030
 ## Interfaces, 
 ## Working with Unity/Issues
 ## Merging BRANCHES.
-# Kyle Mitchell
+
+### Kyle Mitchell
 ## Met Josh in 4740 (Operating Systems)
 ## We wanted this... Tech Change (AR-VR)
 ## GitHub Repo BOMBS, 
 ## Azure, 
 ## Daheck is up with these commit messages?
+
 # Elliot Hunt
 ## Outro
 ## Future of reality/Life
 
 
 https://drive.google.com/open?id=10ycTSU0j03iq6ZyPuoFw_zzCkJgpISr8
+
+## Kyle's slides
+
+### Project evolution
+
+- Started with Augmented Reality in mind
+- VR is more mature and easier to target
+- Porting a game (even VR) could be done later
+
+### Repository issues
+
+- GitHub Projects pushed us to Azure DevOps
+- Unity project creted before Git ignore rules
+- Unity's meta file usage is ridiculous
+- Merge conflicts and branching strategies
+
+### Accomplishments
+
+- Early start, began coding over Winter Break in 3DiA lab
+- Had structure, features, goals, and components planned before SD1 finished
+- Knowledge of Unity framework, VR programming, game programming
+
+### Technology details
+
+thanks for writing, elliot
