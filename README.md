@@ -2,6 +2,8 @@
 
 Virtual reality game from The Code Monkeys
 
+Fall 2018 - Spring 2019 Senior Design Project University of Wyoming.
+
 ## Group Information
 
 [Team on Github](https://github.com/orgs/cosc495x/teams/arpets)
